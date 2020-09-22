@@ -1,0 +1,1 @@
+# Assignments1_content_management_system_Django
