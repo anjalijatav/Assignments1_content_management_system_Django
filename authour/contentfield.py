@@ -18,8 +18,14 @@ class Contentfield(models.Model):
     """User portfolio model"""
 
     title = models.CharField(max_length=255)
+    if not title:
+        raise ValueError('title is required')
     body = models.CharField(max_length=255)
+    if not body:
+        raise ValueError('body is required')
     summary = models.CharField(max_length=255)
+    if not summary:
+        raise ValueError('summary is required')
 
     def document_file(self, filename):
 
@@ -27,6 +33,8 @@ class Contentfield(models.Model):
         return path
 
     document = models.ImageField(upload_to=document_file)
+    if not document:
+        raise ValueError('document is required')
     categories = models.CharField(max_length=255)
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL,

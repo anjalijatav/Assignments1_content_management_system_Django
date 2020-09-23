@@ -25,13 +25,18 @@ class Userfield(models.Model):
     email = models.EmailField(max_length=255, unique=True)
     # password = models.CharField(max_length=255)
     name = models.CharField(max_length=255)
+    if not name:
+        raise ValueError('Name is required')
     phone = models.CharField(max_length=10, default="", editable=False)
+    if not phone:
+        raise ValueError('Phone Number is required')
     address = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
     state = models.CharField(max_length=255)
     country = models.CharField(max_length=255)
     pincode = models.CharField(max_length=6, default="", editable=False)
-
+    if not pincode:
+        raise ValueError('pincode is required')
     objects = UserfieldManager()
 
     USERNAME_FIELD = 'email'
