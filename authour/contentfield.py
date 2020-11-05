@@ -44,4 +44,4 @@ class Contentfield(models.Model):
     objects = ContentfieldManager()
 
     def __str__(self):
-        return 'Created!'
+        return self.title

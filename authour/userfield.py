@@ -40,5 +40,5 @@ class Userfield(models.Model):
     objects = UserfieldManager()
 
     USERNAME_FIELD = 'email'
-    # def __str__(self):
-    #     return "self.name"
+    def __str__(self):
+        return self.name

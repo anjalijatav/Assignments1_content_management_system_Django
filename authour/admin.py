@@ -1,5 +1,6 @@
 from django.contrib import admin
-
+#todo user name - authour
+#todo paswword - admin123456
 # Register your models here.
 from django.contrib import admin
 from authour.userfield import UserfieldManager,Userfield
